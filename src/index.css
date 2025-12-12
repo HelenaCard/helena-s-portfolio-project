@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,68 +6,41 @@
 
 @layer base {
   :root {
-    --radius: 0.5rem;
-    
-    /* Light Mode - Editorial Clean */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 9%;
-    
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 9%;
-    
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 9%;
-    
-    /* Primary Blue #3B82F6 */
-    --primary: 217 91% 60%;
-    --primary-foreground: 0 0% 100%;
-    
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 9%;
-    
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
-    
-    --accent: 217 91% 97%;
-    --accent-foreground: 0 0% 9%;
-    
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-    
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 217 91% 60%;
-  }
+    --background: 220 20% 6%;
+    --foreground: 210 40% 98%;
 
-  .dark {
-    /* Dark Mode */
-    --background: 0 0% 7%;
-    --foreground: 0 0% 98%;
-    
-    --card: 0 0% 10%;
-    --card-foreground: 0 0% 98%;
-    
-    --popover: 0 0% 10%;
-    --popover-foreground: 0 0% 98%;
-    
-    --primary: 217 91% 60%;
-    --primary-foreground: 0 0% 100%;
-    
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 98%;
-    
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 65%;
-    
-    --accent: 0 0% 15%;
-    --accent-foreground: 0 0% 98%;
-    
-    --destructive: 0 62% 30%;
-    --destructive-foreground: 0 0% 98%;
-    
-    --border: 0 0% 18%;
-    --input: 0 0% 18%;
-    --ring: 217 91% 60%;
+    --card: 220 20% 10%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 20% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 250 90% 70%;
+    --primary-foreground: 220 20% 6%;
+
+    --secondary: 220 20% 14%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 15% 20%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 200 100% 60%;
+    --accent-foreground: 220 20% 6%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 250 90% 70%;
+
+    --radius: 0.75rem;
+
+    --gradient-start: 250 90% 70%;
+    --gradient-end: 200 100% 60%;
+
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
   }
 }
 
@@ -82,25 +55,28 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', sans-serif;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    @apply tracking-tight;
+    font-family: var(--font-heading);
   }
 }
 
 @layer utilities {
-  .font-display {
-    font-family: 'Plus Jakarta Sans', sans-serif;
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
   }
 
-  .font-sans {
-    font-family: 'Inter', sans-serif;
+  .bg-gradient-primary {
+    background-image: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
   }
 
-  /* Staggered fade-up animations */
+  .glow {
+    box-shadow: 0 0 40px hsl(var(--primary) / 0.3);
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 30px hsl(var(--accent) / 0.2);
+  }
+
   .animate-fade-up {
     animation: fadeUp 0.6s ease-out forwards;
     opacity: 0;
@@ -121,39 +97,20 @@
     opacity: 0;
   }
 
-  .animate-fade-up-delay-4 {
-    animation: fadeUp 0.6s ease-out 0.4s forwards;
-    opacity: 0;
-  }
-
-  /* Link underline animation */
-  .link-underline {
-    @apply relative;
-  }
-
-  .link-underline::after {
-    content: '';
-    @apply absolute bottom-0 left-0 w-full h-px bg-primary scale-x-0 origin-right transition-transform duration-300;
-  }
-
-  .link-underline:hover::after {
-    @apply scale-x-100 origin-left;
-  }
-
-  /* Subtle hover lift */
   .hover-lift {
     @apply transition-all duration-300;
   }
 
   .hover-lift:hover {
-    transform: translateY(-2px);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px hsl(var(--primary) / 0.2);
   }
 }
 
 @keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -161,7 +118,15 @@
   }
 }
 
-/* Hairline separator */
-.hairline {
-  @apply h-px bg-border;
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
 }
