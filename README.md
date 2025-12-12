@@ -1,73 +1,94 @@
-# Welcome to your Lovable project
+# Helena's Portfolio Project
 
-## Project info
+Breve portfólio/website pessoal criado por HelenaCard para apresentar projetos, habilidades e formas de contato.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Índice
+- [Sobre](#sobre)
+- [Status](#status)
+- [Demonstração](#demonstração)
+- [Tecnologias](#tecnologias)
+- [Funcionalidades](#funcionalidades)
+- [Pré-requisitos](#pré-requisitos)
+- [Instalação e execução](#instalação-e-execução)
+- [Estrutura de pastas](#estrutura-de-pastas)
+- [Como contribuir](#como-contribuir)
+- [Deploy](#deploy)
+- [Licença](#licença)
+- [Contato](#contato)
 
-## How can I edit this code?
+## Sobre
+Este repositório contém o código-fonte do meu portfólio pessoal. O objetivo é mostrar projetos, um resumo das minhas habilidades e permitir que visitantes entrem em contato.
 
-There are several ways of editing your application.
+## Status
+Em desenvolvimento / versão inicial (atualize conforme necessário).
 
-**Use Lovable**
+## Demonstração
+- Link para demo hospedada: [INSIRA_AQUI_O_LINK_DA_DEMO]  
+(Substitua pelo URL do Netlify / Vercel / GitHub Pages quando disponível.)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Tecnologias
+- Tecnologias usadas (exemplos — atualize conforme o seu projeto):
+  - HTML5, CSS3, JavaScript (ou TypeScript)
+  - React / Next.js (se aplicável)
+  - Node.js (se houver backend)
+  - Ferramentas de build: npm / yarn / pnpm
 
-Changes made via Lovable will be committed automatically to this repo.
+## Funcionalidades
+- Página inicial com apresentação pessoal
+- Seção de projetos com descrições e links para repositórios/demos
+- Página de contato (formulário ou e-mail)
+- Responsividade para dispositivos móveis
+- (Adicionar mais funcionalidades específicas do seu projeto)
 
-**Use your preferred IDE**
+## Pré-requisitos
+- Git
+- Node.js >= 16 (se o projeto usar Node/React)
+- npm / yarn / pnpm
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Instalação e execução
+Instruções genéricas — ajuste conforme sua stack:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+```bash
+# clonar o repositório
+git clone https://github.com/HelenaCard/helena-s-portfolio-project.git
+cd helena-s-portfolio-project
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+# se o projeto usar Node (React, Next, etc.)
+npm install
+npm run dev    # ou npm start / npm run serve conforme scripts do package.json
 ```
 
-**Edit a file directly in GitHub**
+Se o projeto for um site estático, abra `index.html` no navegador ou sirva com um servidor estático.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Estrutura de pastas (exemplo)
+```
+/public
+/src
+  /components
+  /pages
+  /styles
+package.json
+README.md
+```
+Atualize para refletir a estrutura real do repositório.
 
-**Use GitHub Codespaces**
+## Como contribuir
+1. Fork este repositório.
+2. Crie uma branch: `git checkout -b feature/minha-melhoria`
+3. Faça commits com mensagens claras.
+4. Envie um pull request descrevendo suas mudanças.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Deploy
+- Sugestão: usar Vercel, Netlify ou GitHub Pages.
+- Configurações de build (exemplo para Next.js): `npm run build` e `npm start` (ou conforme a plataforma).
 
-## What technologies are used for this project?
+## Licença
+Escolha uma licença e substitua abaixo (ex.: MIT):
+- Licença: [INSIRA_AQUI_A_LICENÇA]
 
-This project is built with:
+## Contato
+- Nome: Helena
+- Email: [seu-email@exemplo.com]
+- LinkedIn / GitHub: https://github.com/HelenaCard
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+ nos arquivos do repositório (por exemplo package.json, estrutura de pastas, scripts)? Posso buscar esses arquivos e criar uma versão final pronta para commit.
