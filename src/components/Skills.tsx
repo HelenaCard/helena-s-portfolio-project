@@ -1,41 +1,55 @@
 const Skills = () => {
-  const skills = [
-    { name: "Python", category: "Linguagem" },
-    { name: "JavaScript", category: "Linguagem" },
-    { name: "TypeScript", category: "Linguagem" },
-    { name: "C++", category: "Linguagem" },
-    { name: "HTML", category: "Web" },
-    { name: "CSS", category: "Web" },
-    { name: "Power BI", category: "Dados" },
-    { name: "Excel", category: "Dados" },
-    { name: "Azure", category: "Cloud" },
-    { name: "Git", category: "Ferramenta" },
-    { name: "VS Code", category: "Ferramenta" },
-    { name: "IoT", category: "Hardware" },
+  const skillGroups = [
+    {
+      category: "Linguagens",
+      skills: ["Python", "JavaScript", "TypeScript", "C++"],
+    },
+    {
+      category: "Web",
+      skills: ["HTML", "CSS"],
+    },
+    {
+      category: "Dados & Cloud",
+      skills: ["Power BI", "Excel", "Azure"],
+    },
+    {
+      category: "Ferramentas",
+      skills: ["Git", "VS Code", "IoT"],
+    },
   ];
 
   return (
-    <section id="skills" className="py-24 px-6 bg-card/30">
-      <div className="max-w-5xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-          <span className="text-gradient">Tecnologias</span> & Skills
-        </h2>
-        <div className="w-20 h-1 bg-gradient-primary mx-auto mb-12 rounded-full" />
+    <section id="skills" className="py-24 px-6 bg-secondary/30">
+      <div className="max-w-4xl mx-auto">
+        {/* Section header */}
+        <div className="mb-16">
+          <h2 className="text-sm font-medium text-primary tracking-widest uppercase mb-4 animate-fade-up">
+            Tecnologias
+          </h2>
+          <div className="hairline animate-fade-up-delay-1" />
+        </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-          {skills.map((skill, index) => (
-            <div
-              key={index}
-              className="group relative p-5 bg-card rounded-xl border border-border hover:border-primary/50 transition-all duration-300 hover-lift text-center"
-              style={{ animationDelay: `${index * 50}ms` }}
+        {/* Skills grid */}
+        <div className="grid md:grid-cols-2 gap-12">
+          {skillGroups.map((group, groupIndex) => (
+            <div 
+              key={groupIndex} 
+              className="animate-fade-up"
+              style={{ animationDelay: `${(groupIndex + 1) * 100}ms` }}
             >
-              <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-5 rounded-xl transition-opacity duration-300" />
-              <h3 className="font-mono font-semibold text-foreground mb-1 relative z-10">
-                {skill.name}
+              <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-4">
+                {group.category}
               </h3>
-              <p className="text-xs text-muted-foreground relative z-10">
-                {skill.category}
-              </p>
+              <div className="flex flex-wrap gap-2">
+                {group.skills.map((skill, skillIndex) => (
+                  <span
+                    key={skillIndex}
+                    className="px-4 py-2 bg-background border border-border rounded-lg text-sm font-medium text-foreground hover:border-primary hover:text-primary transition-colors cursor-default"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </div>
           ))}
         </div>
